@@ -1,26 +1,15 @@
 {
-  "name": "express_demo",
+  "name": "LearningExpress",
   "version": "1.0.0",
-  "description": "Learning Express",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "David Lee",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "express3-handlebars": "^0.5.2",
-    "mongoose": "^4.11.1"
-  },
-  "devDependencies": {
-    "chai": "^4.0.2",
-    "grunt": "^1.0.1",
-    "grunt-cafe-mocha": "^0.1.13",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-exec": "^2.0.0",
-    "mocha": "^3.4.2",
-    "zombie": "^5.0.7"
+    "express": "^4.15.3"
   }
 }
