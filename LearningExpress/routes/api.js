@@ -8,7 +8,11 @@ router.get('/books', function (req, res) {
 
 /* create a new book */
 router.post('/books', function (req, res) {
-  res.send({ name: 'POST' })
+  res.send({
+    name: 'POST',
+    book_name: req.body.name,
+    author: req.body.author
+  })
 })
 
 /* update book */
