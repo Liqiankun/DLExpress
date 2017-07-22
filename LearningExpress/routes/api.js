@@ -4,7 +4,13 @@ var Book = require('../models/book')
 
 /* get the list of books */
 router.get('/books', function (req, res, next) {
-  res.send({ name: 'GET' })
+  Book.find(function (err, books) {
+    if (err) {
+      next(err)
+    } else {
+      res.json(books)
+    }
+  })
 })
 
 /* create a new book */
@@ -28,12 +34,24 @@ router.post('/books', function (req, res, next) {
 
 /* update book */
 router.put('/books/:id', function (req, res, next) {
-  res.send({ name: 'PUT' })
+  Book.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (err, book) {
+    if (err) {
+      next(err)
+    } else {
+      res.json(book)
+    }
+  })
 })
 
 /* delete book */
 router.delete('/books/:id', function (req, res, next) {
-  res.send({ name: 'DELETE' })
+  Book.findByIdAndRemove(req.params.id, function (err, book) {
+    if (err) {
+      next(err)
+    } else {
+      res.json(book)
+    }
+  })
 })
 
 module.exports = router
