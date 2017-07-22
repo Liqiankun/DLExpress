@@ -4,7 +4,8 @@ var Book = require('../models/book')
 
 /* get the list of books */
 router.get('/books', function (req, res, next) {
-  Book.find(function (err, books) {
+  var query = req.query ? req.query : {}
+  Book.find(query, function (err, books) {
     if (err) {
       next(err)
     } else {
