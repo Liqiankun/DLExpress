@@ -5,7 +5,7 @@ var Schema = mongoose.Schema
 var BookSchema = new Schema({
   name: {
     type: String,
-    require: [true, 'Name is required']
+    required: [true, 'Name is required']
   },
   author: {
     type: String

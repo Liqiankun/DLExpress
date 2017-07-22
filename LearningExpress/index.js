@@ -15,8 +15,10 @@ app.use(bodyParser.json())
 
 /* use router */
 app.use('/api', routes)
-app.get('/', function (req, res) {
-  res.send('GET request')
+
+/* error handler */
+app.use(function (err, req, res, next) {
+  res.status(422).send({ error: err.message })
 })
 
 /* listen fro request */

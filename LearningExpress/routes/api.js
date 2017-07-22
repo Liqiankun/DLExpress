@@ -3,15 +3,15 @@ var router = express.Router()
 var Book = require('../models/book')
 
 /* get the list of books */
-router.get('/books', function (req, res) {
+router.get('/books', function (req, res, next) {
   res.send({ name: 'GET' })
 })
 
 /* create a new book */
-router.post('/books', function (req, res) {
+router.post('/books', function (req, res, next) {
   Book.create(req.body, function (err, book) {
     if (err) {
-      console.log(err)
+      next(err)
     } else {
       res.json(book)
     }
@@ -23,16 +23,16 @@ router.post('/books', function (req, res) {
   //   } else {
   //     res.json(book)
   //   }
-  // })
+  // }).catch(next)
 })
 
 /* update book */
-router.put('/books/:id', function (req, res) {
+router.put('/books/:id', function (req, res, next) {
   res.send({ name: 'PUT' })
 })
 
 /* delete book */
-router.delete('/books/:id', function (req, res) {
+router.delete('/books/:id', function (req, res, next) {
   res.send({ name: 'DELETE' })
 })
 
