@@ -16,13 +16,14 @@ app.use(bodyParser.json())
 /* use router */
 app.use('/api', routes)
 
+/* 400 error */
 app.use(function (req, res) {
   res.status(400).send({ error: 'Not Found' })
 })
 
 /* error handler */
 app.use(function (err, req, res, next) {
-  res.status(422).send({ error: err.message })
+  res.status(500).send({ error: err.message })
 })
 
 /* listen fro request */
