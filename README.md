@@ -7,7 +7,7 @@ Use express build REST API. Create, delete, update, query model!
 
 # How to run it 
 * npm install
-* node index
+* node index (You can use also [nodemon](https://nodemon.io/) index)
 
 # Testing the API
 Test your API using [Postman]()
